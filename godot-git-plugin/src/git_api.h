@@ -10,6 +10,7 @@
 #include <Control.hpp>
 #include <Directory.hpp>
 #include <EditorVCSInterface.hpp>
+#include <Node.hpp>
 #include <File.hpp>
 #include <Godot.hpp>
 #include <LineEdit.hpp>
@@ -101,8 +102,8 @@ using git_signature_ptr = unique_ptr_deleter<git_signature, git_signature_free>;
 using git_status_list_ptr = unique_ptr_deleter<git_status_list, git_status_list_free>;
 using git_tree_ptr = unique_ptr_deleter<git_tree, git_tree_free>;
 
-class GitAPI : public EditorVCSInterface {
-	GODOT_CLASS(GitAPI, EditorVCSInterface)
+class GitAPI : public Node {
+	GODOT_CLASS(GitAPI, Node)
 
 	Credentials creds;
 	bool has_merge = false;
